@@ -1,11 +1,12 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.14)
 
 project(SortFilterProxyModel LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
 
-find_package(Qt5 REQUIRED
+find_package(Qt6 REQUIRED COMPONENTS
     Core
     Qml
-    )
+)
 
 # Module version
 set(SFP_MAJOR 0)
@@ -44,7 +45,9 @@ set(SOURCES
     proxyroles/regexprole.cpp
     sorters/filtersorter.cpp
     proxyroles/filterrole.cpp
-    )
+    utils/utils.cpp
+    utils/utils.h
+)
 
 # --- Object library to link directly with the application
 add_library(SortFilterProxyModel OBJECT ${SOURCES})
