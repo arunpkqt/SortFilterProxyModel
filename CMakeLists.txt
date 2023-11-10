@@ -53,12 +53,12 @@ set(SOURCES
 add_library(SortFilterProxyModel OBJECT ${SOURCES})
 set_target_properties(SortFilterProxyModel
     PROPERTIES
-        CXX_STANDARD 11
+        CXX_STANDARD 17
         EXCLUDE_FROM_ALL TRUE
     )
 target_link_libraries(SortFilterProxyModel PUBLIC
-    Qt5::Core
-    Qt5::Qml
+    Qt6::Core
+    Qt6::Qml
     )
 
 # --- Plugin library
@@ -67,8 +67,8 @@ add_library(SortFilterProxyModelPlugin SHARED
     sortfilterproxymodelplugin.cpp
     )
 target_link_libraries(SortFilterProxyModelPlugin PUBLIC
-    Qt5::Core
-    Qt5::Qml
+    Qt6::Core
+    Qt6::Qml
     )
 
 target_compile_definitions(SortFilterProxyModelPlugin
@@ -79,7 +79,7 @@ target_compile_definitions(SortFilterProxyModelPlugin
     )
 set_target_properties(SortFilterProxyModelPlugin
     PROPERTIES
-        CXX_STANDARD 11
+        CXX_STANDARD 17
         OUTPUT_NAME sortfilterproxymodel
         DEBUG_POSTFIX d
         EXCLUDE_FROM_ALL TRUE
